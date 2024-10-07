@@ -5,13 +5,13 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/SowjanyaKotha/rest"
-	"github.com/SowjanyaKotha/rest/chiadapter"
-	"github.com/SowjanyaKotha/rest/examples/chiexample/models"
-	"github.com/SowjanyaKotha/rest/swaggerui"
 	"github.com/a-h/respond"
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/go-chi/chi/v5"
+	"github.com/praneeth200244/rest"
+	"github.com/praneeth200244/rest/chiadapter"
+	"github.com/praneeth200244/rest/examples/chiexample/models"
+	"github.com/praneeth200244/rest/swaggerui"
 )
 
 func main() {

@@ -1,14 +1,14 @@
-module github.com/SowjanyaKotha/rest/examples/chiexample
+module github.com/praneeth200244/rest/examples/chiexample
 
 go 1.21
 
 toolchain go1.22.2
 
-replace github.com/SowjanyaKotha/rest v0.0.0 => ../../
+replace github.com/praneeth200244/rest v0.0.0 => ../../
 
 require (
 	github.com/a-h/respond v0.0.2
-	github.com/SowjanyaKotha/rest v0.0.0
+	github.com/praneeth200244/rest v0.0.0
 	github.com/getkin/kin-openapi v0.124.0
 	github.com/go-chi/chi/v5 v5.0.12
 )

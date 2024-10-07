@@ -1,6 +1,6 @@
 {
-  "github.com/SowjanyaKotha/rest/getcomments/parser/tests/functiontypes.Data": "Data should be documented.",
-  "github.com/SowjanyaKotha/rest/getcomments/parser/tests/functiontypes.Data.A": "The function here could be ignored.",
-  "github.com/SowjanyaKotha/rest/getcomments/parser/tests/functiontypes.Data.B": "As could this.",
-  "github.com/SowjanyaKotha/rest/getcomments/parser/tests/functiontypes.FuncType": "No need to document this."
+  "github.com/praneeth200244/rest/getcomments/parser/tests/functiontypes.Data": "Data should be documented.",
+  "github.com/praneeth200244/rest/getcomments/parser/tests/functiontypes.Data.A": "The function here could be ignored.",
+  "github.com/praneeth200244/rest/getcomments/parser/tests/functiontypes.Data.B": "As could this.",
+  "github.com/praneeth200244/rest/getcomments/parser/tests/functiontypes.FuncType": "No need to document this."
 }

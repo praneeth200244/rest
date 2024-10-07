@@ -133,7 +133,7 @@ type API struct {
 	// in different namespaces that are set to be stripped, and have the same type Name
 	// could clash.
 	//
-	// Example values could be "github.com/SowjanyaKotha/rest".
+	// Example values could be "github.com/praneeth200244/rest".
 	StripPkgPaths []string
 
 	// Models are the models that are in use in the API.

@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/SowjanyaKotha/rest"
-	"github.com/SowjanyaKotha/rest/chiadapter"
+	"github.com/praneeth200244/rest"
+	"github.com/praneeth200244/rest/chiadapter"
 	"github.com/go-chi/chi/v5"
 	"github.com/google/go-cmp/cmp"
 )

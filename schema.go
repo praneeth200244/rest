@@ -61,7 +61,7 @@ func newPrimitiveSchema(paramType PrimitiveType) *openapi3.Schema {
 }
 
 // populateTags populates the tags section of the OpenAPI spec.
-func(api *API) populateTags(spec *openapi3.T) spec *openapi3.T{
+func (api *API) populateTags(spec *openapi3.T) *openapi3.T {
 	for _, tag := range api.tags {
 		spec.Tags = append(spec.Tags, &openapi3.Tag{
 			Name:        tag.Name,
@@ -72,7 +72,7 @@ func(api *API) populateTags(spec *openapi3.T) spec *openapi3.T{
 			},
 		})
 	}
-	return 
+	return spec
 }
 
 func (api *API) createOpenAPI() (spec *openapi3.T, err error) {

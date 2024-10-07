@@ -1,5 +1,5 @@
 {
-  "github.com/SowjanyaKotha/rest/getcomments/parser/tests/anonymous.Data": "Data should be included.",
-  "github.com/SowjanyaKotha/rest/getcomments/parser/tests/anonymous.Data.A": "A should be included.",
-  "github.com/SowjanyaKotha/rest/getcomments/parser/tests/anonymous.Data.B": "B should be included."
+  "github.com/praneeth200244/rest/getcomments/parser/tests/anonymous.Data": "Data should be included.",
+  "github.com/praneeth200244/rest/getcomments/parser/tests/anonymous.Data.A": "A should be included.",
+  "github.com/praneeth200244/rest/getcomments/parser/tests/anonymous.Data.B": "B should be included."
 }

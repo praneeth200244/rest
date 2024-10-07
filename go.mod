@@ -3,12 +3,11 @@ module github.com/praneeth200244/rest
 go 1.22.5
 
 require (
-	github.com/SowjanyaKotha/rest v0.0.0-20240906125612-36a1f9794e6c
-	github.com/getkin/kin-openapi v0.127.0
+	github.com/getkin/kin-openapi v0.128.0
 	github.com/go-chi/chi/v5 v5.1.0
 	github.com/google/go-cmp v0.6.0
-	golang.org/x/exp v0.0.0-20240909161429-701f63a606c0
-	golang.org/x/tools v0.25.0
+	golang.org/x/exp v0.0.0-20241004190924-225e2abe05e6
+	golang.org/x/tools v0.26.0
 	gopkg.in/yaml.v2 v2.4.0
 )
 

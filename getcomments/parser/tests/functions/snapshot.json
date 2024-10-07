@@ -1,5 +1,5 @@
 {
-  "github.com/SowjanyaKotha/rest/getcomments/parser/tests/functions.Data": "Data should be included.",
-  "github.com/SowjanyaKotha/rest/getcomments/parser/tests/functions.Data.A": "A should also be included.",
-  "github.com/SowjanyaKotha/rest/getcomments/parser/tests/functions.DontIgnoreMe": "DontIgnoreMe just because I'm further down the file."
+  "github.com/praneeth200244/rest/getcomments/parser/tests/functions.Data": "Data should be included.",
+  "github.com/praneeth200244/rest/getcomments/parser/tests/functions.Data.A": "A should also be included.",
+  "github.com/praneeth200244/rest/getcomments/parser/tests/functions.DontIgnoreMe": "DontIgnoreMe just because I'm further down the file."
 }

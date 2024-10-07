@@ -3,7 +3,7 @@ package post
 import (
 	"net/http"
 
-	"github.com/SowjanyaKotha/rest/examples/stdlib/models"
+	"github.com/praneeth200244/rest/examples/stdlib/models"
 )
 
 type TopicPostRequest struct {
