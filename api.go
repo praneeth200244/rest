@@ -1,3 +1,5 @@
+// Create a struct to hold the tags. Create a slice of tags and populate it.
+
 package rest
 
 import (
@@ -139,6 +141,20 @@ type API struct {
 	// by editing this value.
 	models map[string]*openapi3.Schema
 
+	// Tags is a section in openapi specification. The name, description and external docs has be given as user input.
+	// User Input is expected as:
+	// type Tag struct {
+	// 	Name         string // Name of the tag
+	// 	Description  string // Description of the tag
+	// 	ExternalDocs *openapi3.ExternalDocs
+	// }
+
+	// type ExternalDocs struct {
+	// 	Description string
+	// 	URL         string
+	// }
+	tags []*openapi3.Tag
+
 	// KnownTypes are added to the OpenAPI specification output.
 	// The default implementation:
 	//   Maps time.Time to a string.
@@ -151,6 +167,10 @@ type API struct {
 	// Apply customisation to a specific type by checking the t parameter.
 	// Apply customisations to all types by ignoring the t parameter.
 	ApplyCustomSchemaToType func(t reflect.Type, s *openapi3.Schema)
+}
+
+func (api *API) AddTags(tag *openapi3.Tag) {
+	api.tags = append(api.tags, tag)
 }
 
 // Merge route data into the existing configuration.

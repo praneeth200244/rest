@@ -7,9 +7,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/SowjanyaKotha/rest/enums"
-	"github.com/SowjanyaKotha/rest/getcomments/parser"
 	"github.com/getkin/kin-openapi/openapi3"
+	"github.com/praneeth200244/rest/enums"
+	"github.com/praneeth200244/rest/getcomments/parser"
 	"golang.org/x/exp/constraints"
 )
 
@@ -26,6 +26,7 @@ func newSpec(name string) *openapi3.T {
 			Extensions: map[string]interface{}{},
 		},
 		Paths:      &openapi3.Paths{},
+		Tags:       []*openapi3.Tag{},
 		Extensions: map[string]interface{}{},
 	}
 }
@@ -57,6 +58,21 @@ func newPrimitiveSchema(paramType PrimitiveType) *openapi3.Schema {
 			Type: &openapi3.Types{string(paramType)},
 		}
 	}
+}
+
+// populateTags populates the tags section of the OpenAPI spec.
+func(api *API) populateTags(spec *openapi3.T) spec *openapi3.T{
+	for _, tag := range api.tags {
+		spec.Tags = append(spec.Tags, &openapi3.Tag{
+			Name:        tag.Name,
+			Description: tag.Description,
+			ExternalDocs: &openapi3.ExternalDocs{
+				Description: tag.ExternalDocsDesc,
+				URL:         tag.ExternalDocsURL,
+			},
+		})
+	}
+	return 
 }
 
 func (api *API) createOpenAPI() (spec *openapi3.T, err error) {
@@ -164,6 +180,9 @@ func (api *API) createOpenAPI() (spec *openapi3.T, err error) {
 	if err = spec.Validate(loader.Context); err != nil {
 		return spec, fmt.Errorf("failed validation: %w", err)
 	}
+
+	// Populate the tags content here
+	populateTags(spec)
 
 	return spec, err
 }
