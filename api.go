@@ -3,6 +3,7 @@
 package rest
 
 import (
+	"fmt"
 	"net/http"
 	"reflect"
 	"time"
@@ -164,6 +165,8 @@ type API struct {
 // documentation, allowing for better organization and categorization
 // of API endpoints.
 func (api *API) AddTags(tag *openapi3.Tag) {
+	fmt.Println(tag)
+	fmt.Println("API: ", api)
 	if api.tags == nil {
 		api.tags = []*openapi3.Tag{}
 	}
