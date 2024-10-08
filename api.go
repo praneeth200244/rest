@@ -29,6 +29,7 @@ func NewAPI(name string, opts ...APIOpts) *API {
 		Routes:     make(map[Pattern]MethodToRoute),
 		// map of model name to schema.
 		models:   make(map[string]*openapi3.Schema),
+		tags:     []*openapi3.Tag{},
 		comments: make(map[string]map[string]string),
 	}
 	for _, o := range opts {
