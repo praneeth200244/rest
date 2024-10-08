@@ -60,16 +60,28 @@ func newPrimitiveSchema(paramType PrimitiveType) *openapi3.Schema {
 	}
 }
 
-// populateTags populates the tags section of the OpenAPI spec.
+// populateTags adds the tags stored in the API to the provided OpenAPI specification.
+// This function iterates over the tags stored in the API and appends them to the
+// provided OpenAPI specification. It ensures that each tag's external documentation
+// is included if available, enhancing the API documentation with detailed tag information.
 func (api *API) populateTags(spec *openapi3.T) *openapi3.T {
+	if spec.Tags == nil {
+		spec.Tags = openapi3.Tags{}
+	}
+
 	for _, tag := range api.tags {
+		var externalDocs *openapi3.ExternalDocs
+		if tag.ExternalDocs != nil {
+			externalDocs = &openapi3.ExternalDocs{
+				Description: tag.ExternalDocs.Description,
+				URL:         tag.ExternalDocs.URL,
+			}
+		}
+
 		spec.Tags = append(spec.Tags, &openapi3.Tag{
-			Name:        tag.Name,
-			Description: tag.Description,
-			ExternalDocs: &openapi3.ExternalDocs{
-				Description: tag.ExternalDocsDesc,
-				URL:         tag.ExternalDocsURL,
-			},
+			Name:         tag.Name,
+			Description:  tag.Description,
+			ExternalDocs: externalDocs,
 		})
 	}
 	return spec
@@ -182,7 +194,7 @@ func (api *API) createOpenAPI() (spec *openapi3.T, err error) {
 	}
 
 	// Populate the tags content here
-	populateTags(spec)
+	spec = api.populateTags(spec)
 
 	return spec, err
 }

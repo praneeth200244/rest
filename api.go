@@ -142,17 +142,6 @@ type API struct {
 	models map[string]*openapi3.Schema
 
 	// Tags is a section in openapi specification. The name, description and external docs has be given as user input.
-	// User Input is expected as:
-	// type Tag struct {
-	// 	Name         string // Name of the tag
-	// 	Description  string // Description of the tag
-	// 	ExternalDocs *openapi3.ExternalDocs
-	// }
-
-	// type ExternalDocs struct {
-	// 	Description string
-	// 	URL         string
-	// }
 	tags []*openapi3.Tag
 
 	// KnownTypes are added to the OpenAPI specification output.
@@ -169,6 +158,10 @@ type API struct {
 	ApplyCustomSchemaToType func(t reflect.Type, s *openapi3.Schema)
 }
 
+// AddTags appends a new tag to the API's list of tags.
+// This function ensures that the provided tag is included in the API's
+// documentation, allowing for better organization and categorization
+// of API endpoints.
 func (api *API) AddTags(tag *openapi3.Tag) {
 	api.tags = append(api.tags, tag)
 }

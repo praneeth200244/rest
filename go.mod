@@ -1,6 +1,6 @@
 module github.com/praneeth200244/rest
 
-go 1.22.5
+go 1.22.1
 
 require (
 	github.com/getkin/kin-openapi v0.128.0
