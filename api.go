@@ -163,6 +163,9 @@ type API struct {
 // documentation, allowing for better organization and categorization
 // of API endpoints.
 func (api *API) AddTags(tag *openapi3.Tag) {
+	if api.tags == nil {
+		api.tags = []*openapi3.Tag{}
+	}
 	api.tags = append(api.tags, tag)
 }
 
