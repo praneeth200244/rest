@@ -70,19 +70,20 @@ func (api *API) populateTags(spec *openapi3.T) *openapi3.T {
 	}
 
 	for _, tag := range api.tags {
-		var externalDocs *openapi3.ExternalDocs
-		if tag.ExternalDocs != nil {
-			externalDocs = &openapi3.ExternalDocs{
-				Description: tag.ExternalDocs.Description,
-				URL:         tag.ExternalDocs.URL,
-			}
-		}
+		// var externalDocs *openapi3.ExternalDocs
+		// if tag.ExternalDocs != nil {
+		// 	externalDocs = &openapi3.ExternalDocs{
+		// 		Description: tag.ExternalDocs.Description,
+		// 		URL:         tag.ExternalDocs.URL,
+		// 	}
+		// }
 
-		spec.Tags = append(spec.Tags, &openapi3.Tag{
-			Name:         tag.Name,
-			Description:  tag.Description,
-			ExternalDocs: externalDocs,
-		})
+		// spec.Tags = append(spec.Tags, &openapi3.Tag{
+		// 	Name:         tag.Name,
+		// 	Description:  tag.Description,
+		// 	ExternalDocs: externalDocs,
+		// })
+		spec.Tags = append(spec.Tags, tag)
 	}
 	return spec
 }
