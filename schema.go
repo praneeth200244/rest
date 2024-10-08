@@ -26,7 +26,7 @@ func newSpec(name string) *openapi3.T {
 			Extensions: map[string]interface{}{},
 		},
 		Paths:      &openapi3.Paths{},
-		Tags:       []*openapi3.Tag{},
+		Tags:       openapi3.Tags{},
 		Extensions: map[string]interface{}{},
 	}
 }
@@ -69,7 +69,7 @@ func (api *API) populateTags(spec *openapi3.T) *openapi3.T {
 		spec.Tags = openapi3.Tags{}
 	}
 
-	for _, tag := range api.tags {
+	for _, tag := range api.Tags {
 		// var externalDocs *openapi3.ExternalDocs
 		// if tag.ExternalDocs != nil {
 		// 	externalDocs = &openapi3.ExternalDocs{
@@ -83,6 +83,9 @@ func (api *API) populateTags(spec *openapi3.T) *openapi3.T {
 		// 	Description:  tag.Description,
 		// 	ExternalDocs: externalDocs,
 		// })
+		// spec.Tags = append(spec.Tags, tag)
+
+		// newTag := openapi3.Tag{}
 		spec.Tags = append(spec.Tags, tag)
 	}
 	return spec

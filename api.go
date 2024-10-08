@@ -3,7 +3,6 @@
 package rest
 
 import (
-	"fmt"
 	"net/http"
 	"reflect"
 	"time"
@@ -30,7 +29,7 @@ func NewAPI(name string, opts ...APIOpts) *API {
 		Routes:     make(map[Pattern]MethodToRoute),
 		// map of model name to schema.
 		models:   make(map[string]*openapi3.Schema),
-		tags:     []*openapi3.Tag{},
+		Tags:     []*openapi3.Tag{},
 		comments: make(map[string]map[string]string),
 	}
 	for _, o := range opts {
@@ -144,7 +143,7 @@ type API struct {
 	models map[string]*openapi3.Schema
 
 	// Tags is a section in openapi specification. The name, description and external docs has be given as user input.
-	tags []*openapi3.Tag
+	Tags []*openapi3.Tag
 
 	// KnownTypes are added to the OpenAPI specification output.
 	// The default implementation:
@@ -165,12 +164,10 @@ type API struct {
 // documentation, allowing for better organization and categorization
 // of API endpoints.
 func (api *API) AddTags(tag *openapi3.Tag) {
-	fmt.Println(tag)
-	fmt.Println("API: ", api)
-	if api.tags == nil {
-		api.tags = []*openapi3.Tag{}
+	if api.Tags == nil {
+		api.Tags = []*openapi3.Tag{}
 	}
-	api.tags = append(api.tags, tag)
+	api.Tags = append(api.Tags, tag)
 }
 
 // Merge route data into the existing configuration.
